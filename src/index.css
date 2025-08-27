@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./assets/fonts/fontssheet.css";
 
 @theme {
   --font-roboto: Roboto, sans-serif;
