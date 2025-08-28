@@ -1,16 +1,19 @@
 @import "tailwindcss";
+@plugin "daisyui";
 @import "./assets/fonts/fontssheet.css";
 
 @theme {
   --font-roboto: Roboto, sans-serif;
+  --font-satisfy: Satisfy, sans-serif;
 
   --color-transparent: transparent;
-  --color-primary: #7e90fe;
-  --color-secondary1: #198f51;
+  --color-primary: #d72050;
+  --color-secondary1: #ff8c47;
   --color-nu10: #ffffff;
   --color-nu20: #000000;
-  --color-nu30: #7e90fe0d;
-  --color-nu40: #9873ff1a;
+  --color-nu30: #706f6f;
+  --color-nu40: #f3f3f3;
+
   --color-nu50: #1a1919;
   --color-nu60: #ffffffb2;
   --color-nu70: #757575;
@@ -140,11 +143,11 @@
     box-sizing: border-box;
   }
 
-  /* .fontMont {
-    font-family: "Montserrat", serif;
+  .fontSatisfy {
+    font-family: "Satisfy", sans-serif;
   }
 
-  .fontLato {
+  /* .fontLato {
     font-family: "Lato", serif;
   } */
 }
