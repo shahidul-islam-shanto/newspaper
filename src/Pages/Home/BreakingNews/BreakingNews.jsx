@@ -12,7 +12,15 @@ const BreakingNews = () => {
             </button>
           </div>
           <Marquee>
-            <p className="text-[18px] font-semibold">
+            <p className="text-[18px] font-semibold mr-12">
+              Match Highlights: Germany vs Spain — as it happened ! Match
+              Highlights: Germany vs Spain as...
+            </p>
+            <p className="text-[18px] font-semibold mr-12">
+              Match Highlights: Germany vs Spain — as it happened ! Match
+              Highlights: Germany vs Spain as...
+            </p>
+            <p className="text-[18px] font-semibold mr-12">
               Match Highlights: Germany vs Spain — as it happened ! Match
               Highlights: Germany vs Spain as...
             </p>

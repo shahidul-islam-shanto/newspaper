@@ -13,10 +13,10 @@
   --color-nu20: #000000;
   --color-nu30: #706f6f;
   --color-nu40: #f3f3f3;
+  --color-nu50: #605DFF;
+  --color-nu60: #E7E7E7;
 
-  --color-nu50: #1a1919;
-  --color-nu60: #ffffffb2;
-  --color-nu70: #757575;
+  --color-nu70: ##FF8C47;
 
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
