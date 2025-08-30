@@ -1,17 +1,19 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import { FaRegBookmark } from "react-icons/fa";
 import { TbManualGearboxFilled } from "react-icons/tb";
 import { FaStar } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const DragonNewsHome = ({ newsPaper }) => {
-  const [showText, setShowText] = useState(false);
+  // const [showText, setShowText] = useState(false);
   console.log(newsPaper);
-  const { author, title, image_url, details, rating, total_view } = newsPaper;
+  const { author, title, image_url, details, rating, total_view, id } =
+    newsPaper;
 
   // show details text
-  const detailText = details;
-  const detailShort = detailText.slice(0, 300) + "...";
+  // const detailText = details;
+  // const detailShort = detailText.slice(0, 300) + "...";
   return (
     <div>
       <div className="border-2 border-nu60 rounded-xl mb-6">
@@ -36,14 +38,19 @@ const DragonNewsHome = ({ newsPaper }) => {
           <h4 className="mb-5">{title}</h4>
           <img className="w-full rounded-lg mb-6" src={image_url} alt="" />
           <div className="border-b-2 border-nu40 pb-3 mb-4">
-            <p className="mb-3">{showText ? detailText : detailShort}</p>
             <div className="">
-              <button
-                onClick={() => setShowText(!showText)}
-                className="font-semibold text-secondary1"
-              >
-                {showText ? "Close" : "Read More"}
-              </button>
+              {details.length > 200 ? (
+                <p>
+                  {details.slice(0, 200)}
+                  <Link to={`/news_details/${id}`}>
+                    <button className="font-semibold text-secondary1 pl-2">
+                      Read More...
+                    </button>
+                  </Link>
+                </p>
+              ) : (
+                <p className="mb-3">{details}</p>
+              )}
             </div>
           </div>
           <div className="flex justify-between items-center">

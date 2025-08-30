@@ -1,7 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 const NavBer = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  // sin up
+  const handleLogOut = () => {
+    logOut()
+      .them((singup) => {
+        console.log(singup.user);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
   const navBer = (
     <>
       <li>
@@ -20,7 +34,7 @@ const NavBer = () => {
   );
   return (
     <div>
-      <div className="navbar">
+      <div className="container-2 navbar">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -57,6 +71,7 @@ const NavBer = () => {
             role="button"
             className="btn btn-ghost btn-circle avatar"
           >
+            
             <div className="w-10 rounded-full">
               <img
                 alt="Tailwind CSS Navbar component"
@@ -64,9 +79,15 @@ const NavBer = () => {
               />
             </div>
           </div>
-          <Link>
-            <button className="btn">Login</button>
-          </Link>
+          {user ? (
+            <button onClick={handleLogOut} className="btn">
+              Sing up
+            </button>
+          ) : (
+            <Link to={"/login"}>
+              <button className="btn">Login</button>
+            </Link>
+          )}
         </div>
       </div>
     </div>

@@ -5,15 +5,17 @@ import LeftSideNav from "../LeftSideNav/LeftSideNav";
 import RightSideNav from "../RightSideNav/RightSideNav";
 import BreakingNews from "./BreakingNews/BreakingNews";
 import DragonNewsHome from "../../Components/DragonNewsHome/DragonNewsHome";
+import { useLoaderData } from "react-router-dom";
 
 const Home = () => {
-  const [newsPaper, setNewPaper] = useState([]);
+  // const [newsPaper, setNewPaper] = useState([]);
+  const newsPaper = useLoaderData();
 
-  useEffect(() => {
-    fetch("news.json")
-      .then((res) => res.json())
-      .then((data) => setNewPaper(data));
-  }, []);
+  // useEffect(() => {
+  //   fetch("news.json")
+  //     .then((res) => res.json())
+  //     .then((data) => setNewPaper(data));
+  // }, []);
   return (
     <>
       <div className="container-2">
