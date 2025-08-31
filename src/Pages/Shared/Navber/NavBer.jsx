@@ -4,6 +4,7 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 
 const NavBer = () => {
   const { user, logOut } = useContext(AuthContext);
+  console.log(user);
 
   // sin up
   const handleLogOut = () => {
@@ -25,7 +26,7 @@ const NavBer = () => {
         <NavLink to={"/about"}>About</NavLink>
       </li>
       <li>
-        <NavLink to={"/"}>Career</NavLink>
+        <NavLink to={"/career"}>Career</NavLink>
       </li>
       <li>
         <NavLink to={"/login"}>Login</NavLink>
@@ -66,12 +67,12 @@ const NavBer = () => {
           <ul className="menu menu-horizontal px-1">{navBer}</ul>
         </div>
         <div className="navbar-end gap-2">
+         
           <div
             tabIndex={0}
             role="button"
             className="btn btn-ghost btn-circle avatar"
           >
-            
             <div className="w-10 rounded-full">
               <img
                 alt="Tailwind CSS Navbar component"

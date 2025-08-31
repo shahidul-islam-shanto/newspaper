@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+
 import Header from "../Shared/Header/Header";
 import NavBer from "../Shared/Navber/NavBer";
 import LeftSideNav from "../LeftSideNav/LeftSideNav";
@@ -11,11 +11,7 @@ const Home = () => {
   // const [newsPaper, setNewPaper] = useState([]);
   const newsPaper = useLoaderData();
 
-  // useEffect(() => {
-  //   fetch("news.json")
-  //     .then((res) => res.json())
-  //     .then((data) => setNewPaper(data));
-  // }, []);
+ 
   return (
     <>
       <div className="container-2">

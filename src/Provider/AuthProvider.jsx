@@ -11,27 +11,32 @@ export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   //   create user
   const createUser = (email, password) => {
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   //   sing in with firebase
   const singInEmailPassword = (email, password) => {
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
   //   logOut with firebase
   const logOut = () => {
+    setLoading(true);
     return signOut(auth);
   };
 
   //  current user observer
   useEffect(() => {
-    const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
-      console.log("user is an current observe", currentUser);
-      setUser(currentUser);
+    const unSubscribe = onAuthStateChanged(auth, (allUser) => {
+      console.log("this is a all user", allUser);
+      setUser(allUser);
+      setLoading(false);
     });
     return () => {
       unSubscribe();
@@ -40,6 +45,7 @@ const AuthProvider = ({ children }) => {
 
   const authInfo = {
     user,
+    loading,
     createUser,
     singInEmailPassword,
     logOut,
