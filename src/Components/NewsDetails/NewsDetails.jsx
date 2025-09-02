@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../../Pages/Shared/Header/Header";
 import RightSideNav from "../../Pages/RightSideNav/RightSideNav";
 import { useParams } from "react-router-dom";
 import NavBer from "../../Pages/Shared/Navber/NavBer";
+import NewsShow from "../NewsShow/NewsShow";
 
 const NewsDetails = () => {
-  const { id, image_url, title } = useParams();
+  const [newsDetail, setNewsDetail] = useState([]);
+  const { id } = useParams();
+
+  useEffect(() => {
+    fetch(`https://openapi.programming-hero.com/api/news/${id}`)
+      .then((res) => res.json())
+      .then((data) => console.log(data.data));
+  }, []);
+
   return (
     <div>
       <div className="">
@@ -16,11 +25,11 @@ const NewsDetails = () => {
           </div>
           <div className="grid grid-cols-12 gap-6">
             <div className="col-span-8">
-              <h3>Dragon News</h3>
-              <p>news details:{id}</p>
               <div className="">
-                <img src={image_url} alt="" />
-                <h4>{title}</h4>
+                <h1>Dragon News: {newsDetail.length}</h1>
+                {newsDetail.map((item) => (
+                  <NewsShow news={item} />
+                ))}
               </div>
             </div>
             <div className="col-span-4">
