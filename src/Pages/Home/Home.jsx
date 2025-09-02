@@ -8,7 +8,7 @@ import DragonNewsHome from "../../Components/DragonNewsHome/DragonNewsHome";
 import { useLoaderData } from "react-router-dom";
 
 const Home = () => {
-  // const [newsPaper, setNewPaper] = useState([]);
+
   const newsPaper = useLoaderData();
 
  

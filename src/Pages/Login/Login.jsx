@@ -1,11 +1,14 @@
 // import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import NavBer from "../Shared/Navber/NavBer";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Login = () => {
   const { singInEmailPassword } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+  console.log("location is a ", location);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,7 +19,16 @@ const Login = () => {
     console.log(email, password);
 
     // sing in with email and password
-    singInEmailPassword(email, password);
+    singInEmailPassword(email, password)
+      .then((result) => {
+        console.log(result.user);
+
+        // navigate after login
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
   return (
     <>

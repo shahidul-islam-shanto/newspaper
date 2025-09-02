@@ -9,8 +9,8 @@ const NavBer = () => {
   // sin up
   const handleLogOut = () => {
     logOut()
-      .them((singup) => {
-        console.log(singup.user);
+      .them((singUp) => {
+        console.log(singUp.user);
       })
       .catch((error) => {
         console.error(error);
@@ -61,13 +61,14 @@ const NavBer = () => {
               {navBer}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">AiNews</a>
+          <Link to={"/"} className=" font-bold text-[32px]">
+            AiNews
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navBer}</ul>
         </div>
         <div className="navbar-end gap-2">
-         
           <div
             tabIndex={0}
             role="button"

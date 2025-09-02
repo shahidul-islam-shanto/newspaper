@@ -1,4 +1,4 @@
-// import React, { useState } from "react";
+
 import { FaRegBookmark } from "react-icons/fa";
 import { TbManualGearboxFilled } from "react-icons/tb";
 import { FaStar } from "react-icons/fa";
@@ -6,14 +6,12 @@ import { FaEye } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const DragonNewsHome = ({ newsPaper }) => {
-  // const [showText, setShowText] = useState(false);
+ 
   console.log(newsPaper);
   const { author, title, image_url, details, rating, total_view, id } =
     newsPaper;
 
-  // show details text
-  // const detailText = details;
-  // const detailShort = detailText.slice(0, 300) + "...";
+  
   return (
     <div>
       <div className="border-2 border-nu60 rounded-xl mb-6">
